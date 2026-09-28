@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: discovery-server
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    # Không đăng ký chính nó làm Eureka Client
+    register-with-eureka: false
+    # Không fetch registry từ chính nó
+    fetch-registry: false
+  server:
+    # DEV: tắt self-preservation để thấy service biến mất nhanh
+    enable-self-preservation: false
+    # Tần suất quét service hết hạn (ms) — mặc định 60000
+    eviction-interval-timer-in-ms: 5000
